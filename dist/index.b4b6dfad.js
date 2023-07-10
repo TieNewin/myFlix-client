@@ -27179,7 +27179,7 @@ const MainView = ()=>{
             id: 1,
             title: "The Shawshank Redemption",
             description: "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
-            image: "",
+            image: "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
             genre: "Drama",
             director: "Frank Darabont"
         },
@@ -27187,7 +27187,7 @@ const MainView = ()=>{
             id: 2,
             title: "The Godfather",
             description: "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
-            image: "",
+            image: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
             genre: "Drama",
             director: "Francis Coppola"
         },
@@ -27195,7 +27195,7 @@ const MainView = ()=>{
             id: 3,
             title: "The Dark Knight",
             description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-            image: "",
+            image: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
             genre: "Action",
             director: "Christopher Nolan"
         }
@@ -27233,7 +27233,7 @@ const MainView = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "BH2zSGkewhx9BeeD87XmXOvhXX0=");
+_s(MainView, "GdMHOzaNzj9mgwBjf+o3+Vdey5s=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
