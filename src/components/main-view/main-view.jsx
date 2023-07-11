@@ -1,36 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-        {
-          id: 1,
-          title: "The Shawshank Redemption",
-          description: "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
-          image: "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
-          genre: "Drama",
-          director: "Frank Darabont"
-        },
-        {
-          id: 2,
-          title: "The Godfather",
-          description: "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
-          image: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-          genre: "Drama",
-          director: "Francis Coppola"
-        },
-        {
-          id: 3,
-          title: "The Dark Knight",
-          description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-          image: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
-          genre: "Action",
-          director: "Christopher Nolan"
-        },
-    ]);
+    const [movies, setMovies] = useState([]);
 
     const [selectedMovie, setSelectedMovie] = useState(null);
+
+    useEffect(() => {
+        fetch("https://tyflixdb-abb12f7ad46c.herokuapp.com/movies")
+          .then((response) => response.json())
+          .then((data) => {
+            const moviesFromApi = data.map((movie) => {
+                return {
+                    _id: movie._id,
+                    Title: movie.Title,
+                    Description: movie.Description,
+                    Genre: {
+                        Name: movie.Genre.Name,
+                        Description: movie.Genre.Description
+                    },
+                    Director: {
+                        Name: movie.Director.Name,
+                        Bio: movie.Director.Bio,
+                        Birth: movie.Director.Birth,
+                        Death: movie.Director.Death
+                    },
+                    ImagePath: movie.ImagePath,
+                    Featured: movie.Featured
+                };
+            });
+
+            setMovies(moviesFromApi);
+          });
+    }, []);
 
     if (selectedMovie) {
         return <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />;
