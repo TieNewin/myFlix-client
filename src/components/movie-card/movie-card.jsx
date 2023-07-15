@@ -1,35 +1,37 @@
 import PropTypes from "prop-types";
-import { Button, Card } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
-export const MovieCard = ({ movie, onMovieClick }) => {
-  return (
-    <Card className="h-100">
-      <Card.Img variant="top" src={movie.ImagePath} />
-      <Card.Body>
-        <Card.Title>{movie.Title}</Card.Title>
-        <Card.Text>{movie.Genre.Name}</Card.Text>
-        <Button onClick={() => onMovieClick(movie)} variant="link">
-          Open
-        </Button>
-      </Card.Body>
-    </Card>
-  );
+export const MovieCard = ({ movie }) => {
+    return (
+        <Card className="h-100 bg-secondary text-white">
+            <Card.Img variant="top" src={movie.image} />
+            <Card.Body>
+                <Card.Title>{movie.title}</Card.Title>
+                <Card.Text>Director: {movie.director.name}</Card.Text>
+                <Card.Text>Description: {movie.description}</Card.Text>
+                <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+                    <Button variant="link">
+                        Open
+                    </Button>
+                </Link>
+            </Card.Body>
+        </Card>
+    );
 };
 
 MovieCard.propTypes = {
-  movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-    Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
-    }),
-    Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Bio: PropTypes.string.isRequired,
-    }),
-    ImagePath: PropTypes.string.isRequired,
-    Featured: PropTypes.bool.isRequired
-  }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+    movie: PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        director: PropTypes.shape({
+            name: PropTypes.string,
+            bio: PropTypes.string
+        }),
+        genre: PropTypes.shape({
+            name: PropTypes.string,
+            description: PropTypes.string
+        }),
+    }).isRequired
 };
