@@ -15,7 +15,7 @@ export const SignupView = () => {
             Username: username,
             Password: password,
             Email: email,
-            BirthDate: birthday
+            Birthday: birthday
         };
 
         fetch("https://tyflixdb-abb12f7ad46c.herokuapp.com/users", {
@@ -35,7 +35,7 @@ export const SignupView = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit} className="text-white">
+        <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
                 <Form.Control

@@ -9,7 +9,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
             <Container>
                 <Navbar.Brand as={Link} to="/" >
-                    MyFlixApp
+                    TyFlix
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navabar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -30,11 +30,11 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                             <Nav.Link as={Link} to="/">
                                 Home
                             </Nav.Link>
+                            <Nav.Link as={Link} to="/profile">
+                                Profile
+                            </Nav.Link>
                             <Nav.Link onClick={onLoggedOut}>
                                 Logout
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/profile">
-                                My Profile
                             </Nav.Link>
                             </>
                         )}
