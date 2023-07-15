@@ -28474,7 +28474,6 @@ const MovieCard = ({ movie })=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: `/movies/${encodeURIComponent(movie.id)}`,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            variant: "link",
                             children: "Open"
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
@@ -35476,7 +35475,7 @@ const MovieView = ({ movies, user, setUser, token })=>{
         setIsFavorite(isFavorited);
     }, []);
     const removeFavorite = ()=>{
-        fetch(`https://movie-api-es93.herokuapp.com/users/${user.Username}/${movieId}`, {
+        fetch(`https://movie-api-es93.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -35491,7 +35490,7 @@ const MovieView = ({ movies, user, setUser, token })=>{
         });
     };
     const addToFavorite = ()=>{
-        fetch(`https://tyflixdb-abb12f7ad46c.herokuapp.com/users/${user.Username}/${movieId}`, {
+        fetch(`https://tyflixdb-abb12f7ad46c.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
