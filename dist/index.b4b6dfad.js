@@ -47423,7 +47423,7 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
     const [username, setUsername] = (0, _react.useState)(user.Username);
     const [password, setPassword] = (0, _react.useState)(user.Password);
     const [email, setEmail] = (0, _react.useState)(user.Email);
-    const [birthday, setBirthday] = (0, _react.useState)(user.BirthDate);
+    const [birthday, setBirthday] = (0, _react.useState)(user.Birthday);
     /*const favoriteMovies = movies.filter((movie) => {
         return user.FavoriteMovies.includes(movie.id)
     });*/ const handleSubmit = (event)=>{
@@ -47677,7 +47677,7 @@ const ProfileView = ({ user, token, setUser, movies, onLogout })=>{
         ]
     }, void 0, true);
 };
-_s(ProfileView, "bCSI7DBYoxptLvywXGxdU+BiZwg=");
+_s(ProfileView, "liv2JdM8/aRUhXNglA6p+zD50Y4=");
 _c = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");

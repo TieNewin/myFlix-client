@@ -9,7 +9,7 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
     const [username, setUsername] = useState(user.Username);
     const [password, setPassword] = useState(user.Password);
     const [email, setEmail] = useState(user.Email);
-    const [birthday, setBirthday] = useState(user.BirthDate);
+    const [birthday, setBirthday] = useState(user.Birthday);
     /*const favoriteMovies = movies.filter((movie) => {
         return user.FavoriteMovies.includes(movie.id)
     });*/
