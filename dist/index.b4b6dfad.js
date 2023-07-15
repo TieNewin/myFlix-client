@@ -35470,11 +35470,10 @@ const MovieView = ({ movies, user, setUser, token })=>{
     _s();
     const { movieId } = (0, _reactRouter.useParams)();
     const [isFavorite, setIsFavorite] = (0, _react.useState)(false);
-    (0, _react.useEffect)(()=>{
-        const isFavorited = user.FavoriteMovies.includes(movieId);
-        setIsFavorite(isFavorited);
-    }, []);
-    const removeFavorite = ()=>{
+    /*useEffect(() => {
+       const isFavorited = user.FavoriteMovies.includes(movieId)
+       setIsFavorite(isFavorited)
+    }, []);*/ const removeFavorite = ()=>{
         fetch(`https://movie-api-es93.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
@@ -35617,7 +35616,7 @@ const MovieView = ({ movies, user, setUser, token })=>{
         columnNumber: 9
     }, undefined);
 };
-_s(MovieView, "UOrHJdc5k+QPpUCH+7f0PJyDtow=", false, function() {
+_s(MovieView, "AbWhbIiykZD6uc/q73g1FDEi1G8=", false, function() {
     return [
         (0, _reactRouter.useParams)
     ];
