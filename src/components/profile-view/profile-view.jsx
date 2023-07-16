@@ -10,9 +10,9 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
     const [password, setPassword] = useState(user.Password);
     const [email, setEmail] = useState(user.Email);
     const [birthday, setBirthday] = useState(user.Birthday);
-    /*const favoriteMovies = movies.filter((movie) => {
+    const favoriteMovies = movies.filter((movie) => {
         return user.FavoriteMovies.includes(movie.id)
-    });*/
+    });
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -113,14 +113,14 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
             </Form>
             </Col>
         </Row>
-        {/*<Row className="text-white">
+        <Row>
             <h3>Favorite movies:</h3>
             {favoriteMovies.map((movie) => (
                 <Col className="mb-5" key={movie.id} md={4}>
                     <MovieCard movie={movie}></MovieCard>
                 </Col>
             ))}
-            </Row>*/}
+            </Row>
         <Button variant="primary" onClick={deleteAccount}>
             Delete my account
         </Button>

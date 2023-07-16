@@ -8,10 +8,10 @@ export const MovieView = ({ movies, user, setUser, token }) => {
     const { movieId } = useParams();
     const [ isFavorite, setIsFavorite ] = useState(false);
 
-    /*useEffect(() => {
+    useEffect(() => {
        const isFavorited = user.FavoriteMovies.includes(movieId)
        setIsFavorite(isFavorited)
-    }, []);*/
+    }, []);
 
     const removeFavorite = () => {
         fetch(`https://movie-api-es93.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
@@ -33,7 +33,7 @@ export const MovieView = ({ movies, user, setUser, token }) => {
 
     const addToFavorite = () => {
         fetch(`https://tyflixdb-abb12f7ad46c.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
-            method: "PUT",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
