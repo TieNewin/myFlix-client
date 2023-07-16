@@ -14,7 +14,7 @@ export const MovieView = ({ movies, user, setUser, token }) => {
     }, []);
 
     const removeFavorite = () => {
-        fetch(`https://movie-api-es93.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
+        fetch(`https://tyflixdb-abb12f7ad46c.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
