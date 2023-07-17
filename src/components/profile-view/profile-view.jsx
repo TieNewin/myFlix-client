@@ -7,7 +7,7 @@ import { MovieCard } from "../movie-card/movie-card";
 
 export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
     const [username, setUsername] = useState(user.Username);
-    const [password, setPassword] = useState(user.Password);
+    const [password, setPassword] = useState("");
     const [email, setEmail] = useState(user.Email);
     const [birthday, setBirthday] = useState(user.Birthday);
     const favoriteMovies = movies.filter((movie) => {
@@ -64,12 +64,11 @@ export const ProfileView = ({ user, token, setUser, movies, onLogout }) => {
         <Row>
             <Col>
                 <div>Username: {user.Username}</div>
-                <div>Password: {user.Password}</div>
                 <div>Email: {user.Email}</div>
                 <div>Birthday: {user.Birthday.slice(0,10)}</div>
             </Col>
             <Col>
-            <h3 className="text-white">Update profile information</h3>
+            <h3>Update profile information</h3>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
